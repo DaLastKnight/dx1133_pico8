@@ -58,7 +58,7 @@ function use_furniture(item)
             if player_furnitures[i] <= 0 then
                 return false
             end
-            del(player_furnitures, item)
+            player_ingredients[i] -= 1
             return true
         end
     end
@@ -67,7 +67,7 @@ end
 
 -- drawing
 function draw_currency()
-    print("Currency: "..currency, 1, 1, 7)
+    
 end
 
 function draw_ingredients_inventory()
