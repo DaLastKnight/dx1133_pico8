@@ -3,7 +3,9 @@
 -- You can delete the comments to add your own or make your .lua file look cleaner
 -- Remember to do a #include ../src/fileName.lua once you're ready to include!
 
-tempTable = {} -- At the start of every file, declare a table (as they'll act like a class)
+-- At the start of every file, declare a table (as they'll act like a class)
+-- Recommended to do this if variables here are being used in other .lua files
+tempTable = {}
 
 -- ANOTHER NOTE: Function names must all be lowercase because of Pico-8 :/
 function somethinginit()
