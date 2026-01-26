@@ -12,57 +12,41 @@ function update_currency(amount)
 end
 
 function buy_ingredient(item)
-    for i=1,#player_ingredients do
-        if player_ingredients[i] == item then
-            if currency >= ingredients_price[item] then
-                player_ingredients[i] += 1
-                update_currency(-ingredients_price[item])
-                return true
-            else
-                return false
-            end
-        end
+    if currency >= ingredients_price[item] then
+        player_ingredients[item] += 1
+        update_currency(-ingredients_price[item])
+        return true
+    else
+        return false
     end
 end
 
 function use_ingredient(item)
-    for i=1,#player_ingredients do
-        if player_ingredients[i] == item then
-            if player_ingredients[i] <= 0 then
-                return false
-            end
-            player_ingredients[i] -= 1
-            return true
-        end
+    if player_ingredients[item] <= 0 then
+        return false
+    else
+        player_ingredients[item] -= 1
+        return true
     end
-    return false
 end
 
-function buy_furniture(item, cost)
-    for i=1,#player_furnitures do
-        if player_furnitures[i] == item then
-            if currency >= furnitures_price[item] then
-                player_furnitures[i] += 1
-                update_currency(-furnitures_price[item])
-                return true
-            else
-                return false
-            end
-        end
+function buy_furniture(item)
+    if currency >= furnitures_price[item] then
+        player_furnitures[item] += 1
+        update_currency(-furnitures_price[item])
+        return true
+    else
+        return false
     end
 end
 
 function use_furniture(item)
-    for i=1,#player_furnitures do
-        if player_furnitures[i] == item then
-            if player_furnitures[i] <= 0 then
-                return false
-            end
-            player_ingredients[i] -= 1
-            return true
-        end
+    if player_furnitures[item] <= 0 then
+        return false
+    else
+        player_ingredients[item] -= 1
+        return true
     end
-    return false
 end
 
 -- drawing
