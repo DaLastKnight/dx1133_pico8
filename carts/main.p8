@@ -5,15 +5,18 @@ __lua__
 #include ../src/maps.lua
 #include ../src/camera.lua
 #include ../src/debug.lua
+#include ../src/customer.lua
 
 function _init()
 camerainit()
 playerinit()
+customerinit()
 end
 
 function _update()
 moveplayer()
 updatecamera()
+updatecustomer()
 end
 
 function _draw()
@@ -22,6 +25,7 @@ cls()
 -- must come after drawmap()
 drawmap()
 drawplayer()
+drawcustomer()
 showplayercollider()
 camera(0, 0)
 -- ui/static objs go here!

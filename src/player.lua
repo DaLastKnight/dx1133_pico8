@@ -25,6 +25,11 @@ function moveplayer()
 
     local dx = 0
     local dy = 0
+
+    if (player.y > 57)then
+        dy -= 1
+        player.currentSpr = 18
+    end
     
     if (btn(0)) then dx -= 1; player.currentSpr = 20 end -- Go left
     if (btn(1)) then dx += 1; player.currentSpr = 22 end -- Go right
