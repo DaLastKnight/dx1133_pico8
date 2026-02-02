@@ -13,6 +13,7 @@ function playerinit()
     player.currentSpr = 16
 
     player.doingHeist = false
+    player.cooking = false
 end
 
 function drawplayer()
